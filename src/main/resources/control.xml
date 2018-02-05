@@ -264,6 +264,15 @@
             
         </action>
         
+        <action name="*Trip" method="{1}"
+                class="com.rawmakyamu.action.controlpanel.systemconfig.TripAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/tripmgt/trip.jsp</result>
+            <result name="success"></result>
+            <result name="list" type='json'></result>
+            
+        </action>
+        
         <action name="*Customer" method="{1}"
                         class="com.rawmakyamu.action.controlpanel.systemconfig.CustomerAction">
             <result name="message">/WEB-INF/pages/msgFrag.jsp</result>

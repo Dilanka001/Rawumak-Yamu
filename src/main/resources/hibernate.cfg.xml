@@ -69,6 +69,7 @@
         <mapping class="com.rawmakyamu.util.mapping.VehicleType"/>
         <mapping class="com.rawmakyamu.util.mapping.Driver"/>
         <mapping class="com.rawmakyamu.util.mapping.Customer"/>
+        <mapping class="com.rawmakyamu.util.mapping.Trip"/>
 
         
     </session-factory>

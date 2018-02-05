@@ -4,6 +4,8 @@ package com.rawmakyamu.util.mapping;
 import java.math.BigDecimal;
 import java.sql.Blob;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -34,6 +37,7 @@ public class Customer implements java.io.Serializable {
     private Date createdtime;
     private Blob img;
     private Date lastupdatedtime;
+    private Set<Trip> trips = new HashSet<Trip>(0);
 
     public Customer() {
     }
@@ -42,7 +46,7 @@ public class Customer implements java.io.Serializable {
         this.id = id;
     }
 
-    public Customer(BigDecimal id, Status status, String firstname, String lastname, String nic, String mobile, String email, Date createdtime, Blob img, Date lastupdatedtime) {
+    public Customer(BigDecimal id, Status status, String firstname, String lastname, String nic, String mobile, String email, Date createdtime, Blob img, Date lastupdatedtime, Set<Trip> trips) {
         this.id = id;
         this.status = status;
         this.firstname = firstname;
@@ -53,6 +57,7 @@ public class Customer implements java.io.Serializable {
         this.createdtime = createdtime;
         this.img = img;
         this.lastupdatedtime = lastupdatedtime;
+        this.trips = trips;
     }
 
     @Id
@@ -152,4 +157,12 @@ public class Customer implements java.io.Serializable {
         this.lastupdatedtime = lastupdatedtime;
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+    public Set<Trip> getTrips() {
+        return this.trips;
+    }
+
+    public void setTrips(Set<Trip> trips) {
+        this.trips = trips;
+    }
 }

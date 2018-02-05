@@ -71,5 +71,6 @@ public class PageVarList {
     public static final String VEHICLE_TYPE_MGT_PAGE = "SCVT";
     public static final String DRIVER_MGT_PAGE = "SCDM";
     public static final String CUSTOMER_MGT_PAGE = "SCRM";
+    public static final String TRIPS_MGT_PAGE = "SCTM";
 
 }

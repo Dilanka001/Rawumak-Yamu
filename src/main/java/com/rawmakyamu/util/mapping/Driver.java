@@ -4,6 +4,8 @@ package com.rawmakyamu.util.mapping;
 import java.math.BigDecimal;
 import java.sql.Blob;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -41,6 +44,7 @@ public class Driver implements java.io.Serializable {
     private Date lastupdatedtime;
     private String lastupdateduser;
     private Blob img;
+    private Set<Trip> trips = new HashSet<Trip>(0);
 
     public Driver() {
     }
@@ -49,7 +53,7 @@ public class Driver implements java.io.Serializable {
         this.id = id;
     }
 
-    public Driver(BigDecimal id, Status status, String firstname, String lastname, Date dateofbirth, String address, String nic, String licence, Date expirydate, String tel1, String tel2, String email, String account, Date createdtime, Date lastupdatedtime, String lastupdateduser, Blob img) {
+    public Driver(BigDecimal id, Status status, String firstname, String lastname, Date dateofbirth, String address, String nic, String licence, Date expirydate, String tel1, String tel2, String email, String account, Date createdtime, Date lastupdatedtime, String lastupdateduser, Blob img, Set<Trip> trips) {
         this.id = id;
         this.status = status;
         this.firstname = firstname;
@@ -67,6 +71,7 @@ public class Driver implements java.io.Serializable {
         this.lastupdatedtime = lastupdatedtime;
         this.lastupdateduser = lastupdateduser;
         this.img = img;
+        this.trips = trips;
     }
 
     @Id
@@ -229,6 +234,15 @@ public class Driver implements java.io.Serializable {
 
     public void setImg(Blob img) {
         this.img = img;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "driver")
+    public Set<Trip> getTrips() {
+        return this.trips;
+    }
+
+    public void setTrips(Set<Trip> trips) {
+        this.trips = trips;
     }
 
 }

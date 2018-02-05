@@ -3,6 +3,8 @@ package com.rawmakyamu.util.mapping;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -35,6 +38,7 @@ public class VehicleType implements java.io.Serializable {
     private Date createdtime;
     private Date lastupdatedtime;
     private String lastupdateduser;
+    private Set<Trip> trips = new HashSet<Trip>(0);
 
     public VehicleType() {
     }
@@ -43,7 +47,7 @@ public class VehicleType implements java.io.Serializable {
         this.id = id;
     }
 
-    public VehicleType(BigDecimal id, Status status, String description, BigDecimal priceKm, BigDecimal priceMin, BigDecimal baseFare, BigDecimal commission, Byte personCapacity, Date createdtime, Date lastupdatedtime, String lastupdateduser) {
+    public VehicleType(BigDecimal id, Status status, String description, BigDecimal priceKm, BigDecimal priceMin, BigDecimal baseFare, BigDecimal commission, Byte personCapacity, Date createdtime, Date lastupdatedtime, String lastupdateduser, Set<Trip> trips) {
         this.id = id;
         this.status = status;
         this.description = description;
@@ -55,6 +59,7 @@ public class VehicleType implements java.io.Serializable {
         this.createdtime = createdtime;
         this.lastupdatedtime = lastupdatedtime;
         this.lastupdateduser = lastupdateduser;
+        this.trips = trips;
     }
 
     @Id
@@ -163,4 +168,12 @@ public class VehicleType implements java.io.Serializable {
         this.lastupdateduser = lastupdateduser;
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicleType")
+    public Set<Trip> getTrips() {
+        return this.trips;
+    }
+
+    public void setTrips(Set<Trip> trips) {
+        this.trips = trips;
+    }
 }
