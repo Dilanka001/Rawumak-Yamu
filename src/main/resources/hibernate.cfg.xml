@@ -53,31 +53,21 @@
         <mapping class="com.rawmakyamu.util.mapping.Sectionpage"/>
         <mapping class="com.rawmakyamu.util.mapping.Loginhistory"/>
         <mapping class="com.rawmakyamu.util.mapping.Logintype"/>
-
-
-
         <mapping class="com.rawmakyamu.util.mapping.Promotionuserlevel"/>
-
         <mapping class="com.rawmakyamu.util.mapping.MsPromotions"/>
         <mapping class="com.rawmakyamu.util.mapping.MsUserParam"/>
         <mapping class="com.rawmakyamu.util.mapping.AtmLocations"/>
-  
-     
         <mapping class="com.rawmakyamu.util.mapping.Transactionhistory"/>
- 
-
         <mapping class="com.rawmakyamu.util.mapping.Termadult"/>
         <mapping class="com.rawmakyamu.util.mapping.Termteen"/>
-
         <mapping class="com.rawmakyamu.util.mapping.PagetaskTemplateId"/>
         <mapping class="com.rawmakyamu.util.mapping.PagetaskTemplate"/>
-
         <mapping class="com.rawmakyamu.util.mapping.MsUserMessage"/>
-
         <mapping class="com.rawmakyamu.util.mapping.MsCustomerWalletPush"/>
-
         <mapping class="com.rawmakyamu.util.mapping.MsCustomerWalletPushBlock"/>
         <mapping class="com.rawmakyamu.util.mapping.MsCustomerWalletPushFile"/>
+        <mapping class="com.rawmakyamu.util.mapping.VehicleType"/>
+        <mapping class="com.rawmakyamu.util.mapping.Driver"/>
 
         
     </session-factory>

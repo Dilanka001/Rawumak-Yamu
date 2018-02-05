@@ -27,6 +27,8 @@ public class Status implements java.io.Serializable {
     private Set<Userrole> userroles = new HashSet<Userrole>(0);
     private Set<Systemuser> systemusers = new HashSet<Systemuser>(0);
     private Set<Page> pages = new HashSet<Page>(0);
+    private Set<VehicleType> vehicleTypes = new HashSet<VehicleType>(0);
+    private Set<Driver> drivers = new HashSet<Driver>(0);
 
     public Status() {
     }
@@ -38,7 +40,9 @@ public class Status implements java.io.Serializable {
     public Status(String statuscode, Statuscategory statuscategory, String description, Set<Task> tasks, Set<Section> sections,
             Set<Userrole> userroles,
             Set<Systemuser> systemusers,
-            Set<Page> pages) {
+            Set<Page> pages,
+            Set<VehicleType> vehicleTypes,
+            Set<Driver> drivers) {
 
         this.statuscode = statuscode;
         this.statuscategory = statuscategory;
@@ -48,6 +52,8 @@ public class Status implements java.io.Serializable {
         this.userroles = userroles;
         this.systemusers = systemusers;
         this.pages = pages;
+        this.vehicleTypes = vehicleTypes;
+        this.drivers = drivers;
 
     }
 
@@ -125,4 +131,21 @@ public class Status implements java.io.Serializable {
         this.pages = pages;
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "status")
+    public Set<VehicleType> getVehicleTypes() {
+        return this.vehicleTypes;
+    }
+
+    public void setVehicleTypes(Set<VehicleType> vehicleTypes) {
+        this.vehicleTypes = vehicleTypes;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "status")
+    public Set<Driver> getDrivers() {
+        return this.drivers;
+    }
+
+    public void setDrivers(Set<Driver> drivers) {
+        this.drivers = drivers;
+    }
 }
