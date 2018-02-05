@@ -1,6 +1,6 @@
 <%-- 
-    Document   : driveredit
-    Created on : Feb 5, 2018, 4:32:24 PM
+    Document   : customeredit
+    Created on : Feb 5, 2018, 8:59:55 PM
     Author     : chanuka
 --%>
 
@@ -13,11 +13,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="resouces/css/common/common_popup.css">
-        <title>Update Driver</title> 
+        <title>Update Customer</title> 
         <script type="text/javascript">
-            function editDriver(keyval) {
+            function editCustomer(keyval) {
                 $.ajax({
-                    url: '${pageContext.request.contextPath}/FindDriver.action',
+                    url: '${pageContext.request.contextPath}/FindCustomer.action',
                     data: {id: keyval},
                     dataType: "json",
                     type: "POST",
@@ -30,10 +30,8 @@
                             $("#nicEdit").css("color", "black");
                             $('#firstNameEdit').val("");
                             $('#lastNameEdit').val("");
-                            $('#addressEdit').val("");
-                            $('#licenceEdit').val("");
+                            $('#mobileEdit').val("");
                             $('#emailEdit').val("");
-                            $('#accountEdit').val("");
                             $('#statusEdit').val("");
                             $('#divmsg').text("");
                         }
@@ -43,10 +41,8 @@
                             $('#nicEdit').val(data.nic);
                             $('#firstNameEdit').val(data.firstName);
                             $('#lastNameEdit').val(data.lastName);
-                            $('#addressEdit').val(data.address);
-                            $('#licenceEdit').val(data.licence);
+                            $('#mobileEdit').val(data.mobile);
                             $('#emailEdit').val(data.email);
-                            $('#accountEdit').val(data.account);
                             $('#statusEdit').val(data.status);
                         }
                     },
@@ -58,7 +54,7 @@
 
             function cancelData() {
                 var id = $('#idEdit').val();
-                editDriver(id);
+                editCustomer(id);
             }
 
         </script>
@@ -68,7 +64,7 @@
             <s:actionerror theme="jquery"/>
             <s:actionmessage theme="jquery"/>
         </s:div>
-        <s:form id="driveredit" method="post" action="Driver" theme="simple" cssClass="form" >
+        <s:form id="customeredit" method="post" action="Customer" theme="simple" cssClass="form" >
             <div class="row row_popup">
 
                 <div class="col-sm-4">
@@ -81,13 +77,13 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <span style="color: red">*</span><label>Last Name</label>
-                        <s:textfield value="%{lastName}" cssClass="form-control" name="lastName" id="lastNameEdit" maxLength="6" onkeyup="$(this).val($(this).val().replace(/[^a-zA-Z ]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^a-zA-Z ]/g,''))"/>
+                        <s:textfield value="%{lastName}" cssClass="form-control" name="lastName" id="lastNameEdit" maxLength="64" onkeyup="$(this).val($(this).val().replace(/[^a-zA-Z ]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^a-zA-Z ]/g,''))"/>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <span style="color: red">*</span><label>Address </label>
-                        <s:textfield value="%{address}" cssClass="form-control" name="address" id="addressEdit" maxLength="255" onkeyup="$(this).val($(this).val().replace(/[^a-zA-Z0-9]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^a-zA-Z0-9/g,''))"/>
+                        <span style="color: red">*</span><label>Nic</label>
+                        <s:textfield value="%{nic}" cssClass="form-control" name="nic" id="nicEdit" maxLength="16" onkeyup="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))"/>
                     </div>
                 </div>
             </div>  
@@ -95,14 +91,14 @@
 
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <span style="color: red">*</span><label>Nic</label>
-                        <s:textfield value="%{nic}" cssClass="form-control" name="nic" id="nicEdit" maxLength="16" onkeyup="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))"/>
+                        <span style="color: red">*</span><label>Status</label>
+                        <s:select value="%{status}" cssClass="form-control" id="statusEdit" list="%{statusList}"  name="status" headerKey=""  headerValue="--Select Status--" listKey="statuscode" listValue="description"/>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <span style="color: red">*</span><label>License</label>
-                        <s:textfield value="%{licence}" cssClass="form-control" name="licence" id="licenceEdit" maxLength="20" onkeyup="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))"/>
+                        <span style="color: red">*</span><label>Mobile</label>
+                        <s:textfield value="%{mobile}" cssClass="form-control" name="mobile" id="mobileEdit" maxLength="20" onkeyup="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))"/>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -112,20 +108,7 @@
                     </div>
                 </div>
             </div>  
-            <div class="row row_popup">
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <span style="color: red">*</span><label>Account</label>
-                        <s:textfield value="%{account}" cssClass="form-control" name="account" id="accountEdit" maxLength="20" onkeyup="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^a-zA-Z0-9 ]/g,''))"/>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <span style="color: red">*</span><label>Status</label>
-                        <s:select value="%{status}" cssClass="form-control" id="statusEdit" list="%{statusList}"  name="status" headerKey=""  headerValue="--Select Status--" listKey="statuscode" listValue="description"/>
-                    </div>
-                </div>
-            </div>   
+
             <div class="row row_popup">
                 <div class="horizontal_line_popup"></div>
             </div>
@@ -145,7 +128,7 @@
                             />                          
                     </div>
                     <div class="form-group" style=" margin-left: 0px;margin-right: 10px;">                                               
-                        <s:url action="UpdateDriver" var="updateturl"/>
+                        <s:url action="UpdateCustomer" var="updateturl"/>
                         <sj:submit
                             button="true"
                             value="Update"

@@ -252,7 +252,7 @@
         </action>
         
         <action name="*Driver" method="{1}"
-                        class="com.rawmakyamu.action.controlpanel.systemconfig.DriverAction">
+                class="com.rawmakyamu.action.controlpanel.systemconfig.DriverAction">
             <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
             <result name="view">/WEB-INF/pages/controlpanel/systemconfig/drivermgt/driver.jsp</result>
             <result name="viewpopup">/WEB-INF/pages/controlpanel/systemconfig/drivermgt/driverinsert.jsp</result>
@@ -263,6 +263,19 @@
             <result name="detail">/WEB-INF/pages/controlpanel/systemconfig/drivermgt/driveredit.jsp</result>
             
         </action>
+        
+        <action name="*Customer" method="{1}"
+                        class="com.rawmakyamu.action.controlpanel.systemconfig.CustomerAction">
+            <result name="message">/WEB-INF/pages/msgFrag.jsp</result>
+            <result name="view">/WEB-INF/pages/controlpanel/systemconfig/customermgt/customer.jsp</result>
+            <result name="success"></result>
+            <result name="list" type='json'></result>
+            <result name="delete" type="json"></result>
+            <result name="find" type="json"></result>
+            <result name="detail">/WEB-INF/pages/controlpanel/systemconfig/customermgt/customeredit.jsp</result>
+            
+        </action>
+        
         <action name="*TransactionType" method="{1}"
                 class="com.rawmakyamu.action.controlpanel.systemconfig.TransactionTypeAction">
             <result name="message">/WEB-INF/pages/msgFrag.jsp</result>

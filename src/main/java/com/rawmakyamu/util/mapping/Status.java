@@ -29,6 +29,7 @@ public class Status implements java.io.Serializable {
     private Set<Page> pages = new HashSet<Page>(0);
     private Set<VehicleType> vehicleTypes = new HashSet<VehicleType>(0);
     private Set<Driver> drivers = new HashSet<Driver>(0);
+    private Set<Customer> customers = new HashSet<Customer>(0);
 
     public Status() {
     }
@@ -42,7 +43,8 @@ public class Status implements java.io.Serializable {
             Set<Systemuser> systemusers,
             Set<Page> pages,
             Set<VehicleType> vehicleTypes,
-            Set<Driver> drivers) {
+            Set<Driver> drivers,
+            Set<Customer> customers) {
 
         this.statuscode = statuscode;
         this.statuscategory = statuscategory;
@@ -54,6 +56,7 @@ public class Status implements java.io.Serializable {
         this.pages = pages;
         this.vehicleTypes = vehicleTypes;
         this.drivers = drivers;
+        this.customers = customers;
 
     }
 
@@ -148,4 +151,14 @@ public class Status implements java.io.Serializable {
     public void setDrivers(Set<Driver> drivers) {
         this.drivers = drivers;
     }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "status")
+    public Set<Customer> getCustomers() {
+        return this.customers;
+    }
+
+    public void setCustomers(Set<Customer> customers) {
+        this.customers = customers;
+    }
+
 }

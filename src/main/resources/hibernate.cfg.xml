@@ -68,6 +68,7 @@
         <mapping class="com.rawmakyamu.util.mapping.MsCustomerWalletPushFile"/>
         <mapping class="com.rawmakyamu.util.mapping.VehicleType"/>
         <mapping class="com.rawmakyamu.util.mapping.Driver"/>
+        <mapping class="com.rawmakyamu.util.mapping.Customer"/>
 
         
     </session-factory>
