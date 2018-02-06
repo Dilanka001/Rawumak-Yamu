@@ -18,6 +18,12 @@
                     </button>
                     <ul class="dropdown-menu" style="background-color: black;border-color:#e6b800; ">
                         <li>
+                            <a class="btn btn-sm" href="UserLogin.action">
+                                <h6 class="text-left" style="color: #e6b800;"> <span class="glyphicon glyphicon-lock" style="color: #e6b800;"></span> &nbsp;Home</h6>                        
+                            </a>
+                        </li>
+                        <li role="separator" class="divider" style="background-color: #e6b800;"></li>
+                        <li>
                             <a class="btn btn-sm" href="ViewChangePassword.action?message=error3">
                                 <h6 class="text-left" style="color: #e6b800;"> <span class="glyphicon glyphicon-lock" style="color: #e6b800;"></span> &nbsp;Change Password</h6>                        
                             </a>
