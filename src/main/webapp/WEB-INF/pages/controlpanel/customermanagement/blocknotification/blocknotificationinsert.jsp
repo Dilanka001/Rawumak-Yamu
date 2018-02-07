@@ -31,7 +31,7 @@
             <div class="row row_popup">
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <span style="color: red">*</span><label>Wallet ID </label>
+                        <span style="color: red">*</span><label>Customer ID </label>
                         <s:textfield cssClass="form-control" name="walletId" id="walletId" maxLength="10" onkeyup="$(this).val($(this).val().replace(/[^0-9]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^0-9]/g,''))"/>
                     </div>
                 </div>

@@ -170,7 +170,7 @@
                                     <div class="row row_1">
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label>Wallet ID </label>
+                                                <label>Customer ID </label>
                                                 <s:textfield cssClass="form-control" name="walletIdSearch" id="walletIdSearch" maxLength="10" onkeyup="$(this).val($(this).val().replace(/[^0-9]/g,''))" onmouseout="$(this).val($(this).val().replace(/[^0-9]/g,''))" />
                                             </div>
                                         </div>
@@ -329,7 +329,7 @@
                                     >
                                     <sjg:gridColumn name="walletId" index="u.walletId" title="Edit" width="25" align="center" formatter="editformatter" sortable="false" hidden="#vupdatelink" />
                                     <sjg:gridColumn name="walletId" index="u.walletId" title="Delete" width="40" align="center" formatter="deleteformatter" sortable="false" hidden="#vdelete" />  
-                                    <sjg:gridColumn name="walletId" index="u.walletId" title="Wallet ID"  sortable="false" frozen="true"/>
+                                    <sjg:gridColumn name="walletId" index="u.walletId" title="Customer ID"  sortable="false" frozen="true"/>
                                     <sjg:gridColumn name="status" index="u.status" title="Status"  sortable="false"/>
                                     <sjg:gridColumn name="fromdate" index="u.fromdate" title="From Date"  sortable="false"/>
                                     <sjg:gridColumn name="todate" index="u.todate" title="To Date"  sortable="false"/>
