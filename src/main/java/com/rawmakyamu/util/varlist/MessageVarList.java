@@ -721,11 +721,11 @@ public class MessageVarList {
     public static final String CUS_PUSH_NOTIFICATION_WALLETID_NUMERIC = "Incorrect wallet ID";
 
     // --------------------Block notification---------------//
-    public static final String BLOCK_NOTIFICATION_EMPTY_WALLET_ID = "Wallet ID cannot be empty";
+    public static final String BLOCK_NOTIFICATION_EMPTY_WALLET_ID = "Customer ID cannot be empty";
     public static final String BLOCK_NOTIFICATION_EMPTY_STATUS = "Status cannot be empty";
     public static final String BLOCK_NOTIFICATION_EMPTY_FROM_DATE = "From date cannot be empty";
     public static final String BLOCK_NOTIFICATION_EMPTY_TO_DATE = "To date cannot be empty";
-    public static final String BLOCK_NOTIFICATION_INVALID_WALLET_ID = "Invalid wallet ID";
+    public static final String BLOCK_NOTIFICATION_INVALID_WALLET_ID = "Invalid customer ID";
 
     // --------------------Pending Action---------------//
     public static final String PENDING_ACTION_APPROVED_SUCCESS = "Requested operation approved successfully";

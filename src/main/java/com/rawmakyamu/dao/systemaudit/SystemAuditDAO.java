@@ -649,7 +649,7 @@ public class SystemAuditDAO {
 
         Row row = sheet.createRow(0);
         Cell cell = row.createCell(0);
-        cell.setCellValue("FriMi - Digital Life Style Solution");
+        cell.setCellValue("Taxi Service");
         cell.setCellStyle(fontBoldedUnderlinedCell);
 
         row = sheet.createRow(2);

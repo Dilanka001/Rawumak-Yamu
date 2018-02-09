@@ -4,7 +4,7 @@
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="10"/>
+	<property name="ireport.y" value="0"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -158,21 +158,14 @@ ORDER BY
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="7e8d1ae3-019c-4912-860d-55bbcb16b5db" key="staticText-2" x="162" y="4" width="620" height="26" forecolor="#000000"/>
+				<reportElement uuid="7e8d1ae3-019c-4912-860d-55bbcb16b5db" key="staticText-2" x="0" y="4" width="782" height="26" forecolor="#000000"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="18" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
-				<text><![CDATA[FriMi - Digital Life Style Solution]]></text>
+				<text><![CDATA[Taxi Service]]></text>
 			</staticText>
-			<textField isBlankWhenNull="false">
-				<reportElement uuid="a06ab545-6474-4ca8-ab44-86472769f639" key="textField-1" x="162" y="32" width="620" height="13" forecolor="#000000"/>
-				<textElement textAlignment="Center">
-					<font size="8" pdfFontName="Helvetica-Bold"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{bankaddressheader}]]></textFieldExpression>
-			</textField>
 			<line>
-				<reportElement uuid="8d4a9819-f01e-4f59-8d5f-4ca89701a6f8" key="line-1" x="0" y="68" width="783" height="1" forecolor="#FD4F00"/>
+				<reportElement uuid="8d4a9819-f01e-4f59-8d5f-4ca89701a6f8" key="line-1" x="0" y="68" width="783" height="1" forecolor="#E6B800"/>
 			</line>
 			<staticText>
 				<reportElement uuid="270c3ed2-0ba7-449e-be6b-bb25e40320c6" key="staticText-3" x="1" y="72" width="781" height="21" backcolor="#FFFF99"/>
@@ -308,7 +301,7 @@ ORDER BY
 				<text><![CDATA[Generated on  ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="d603c120-91b0-4c5c-8113-cd41be7b2bdf" key="staticText-1" x="162" y="46" width="620" height="17" forecolor="#000000"/>
+				<reportElement uuid="d603c120-91b0-4c5c-8113-cd41be7b2bdf" key="staticText-1" x="1" y="32" width="781" height="17" forecolor="#000000"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
 				</textElement>
@@ -653,10 +646,10 @@ ORDER BY
 				<textFieldExpression><![CDATA[$P{banktel}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement uuid="c4c78c20-254f-4ed3-b220-ad24bed8adbd" key="line-2" x="4" y="34" width="783" height="1" forecolor="#EE7C2D"/>
+				<reportElement uuid="c4c78c20-254f-4ed3-b220-ad24bed8adbd" key="line-2" x="4" y="34" width="783" height="1" forecolor="#E6B800"/>
 			</line>
 			<line>
-				<reportElement uuid="703f638f-d0ea-42f0-89e1-a44641cf49e1" key="line-2" x="4" y="47" width="783" height="1" forecolor="#EE7C2D"/>
+				<reportElement uuid="703f638f-d0ea-42f0-89e1-a44641cf49e1" key="line-2" x="4" y="47" width="783" height="1" forecolor="#E6B800"/>
 			</line>
 		</band>
 	</pageFooter>

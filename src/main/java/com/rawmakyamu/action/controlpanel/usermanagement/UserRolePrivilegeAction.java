@@ -303,18 +303,10 @@ public class UserRolePrivilegeAction extends ActionSupport implements ModelDrive
                                 TaskVarList.ASSIGN_TASK, PageVarList.USER_ROLE_PRIVILEGE_MGT,
                                 SectionVarList.USERMANAGEMENT, inputBean.getNewBox() + " pages assigned to section code " + inputBean.getSection(), null, inputBean.getOldvalue(), newV);
 
-                        message = this.validateAssignPages(inputBean);
+                        message = userRuleDao.assignSectionPages(inputBean, audit);
 
                         if (message.isEmpty()) {
-
-                            message = userRuleDao.assignSectionPages(inputBean, audit);
-
-                            if (message.isEmpty()) {
-                                addActionMessage("User role privilege " + MessageVarList.COMMON_SUCC_ASSIGN);
-                            } else {
-                                addActionError(message);
-                            }
-
+                            addActionMessage("User role privilege " + MessageVarList.COMMON_SUCC_ASSIGN);
                         } else {
                             addActionError(message);
                         }
@@ -432,45 +424,4 @@ public class UserRolePrivilegeAction extends ActionSupport implements ModelDrive
         return "logoutuser";
     }
 
-    private String validateAssignPages(UserRolePrivilegeInputBean inputBean) {
-
-        String message = "";
-
-        try {
-
-            UserRolePrivilegeDAO dao = new UserRolePrivilegeDAO();
-
-            /**
-             * get customer,user,privilege type pages
-             */
-            List<String> custPageList = dao.getPageListByPageType(CommonVarList.PAGE_TYPE_CUSTOMER);
-            List<String> userPageList = dao.getPageListByPageType(CommonVarList.PAGE_TYPE_USER);
-            List<String> privilegePageList = dao.getPageListByPageType(CommonVarList.PAGE_TYPE_PRIVILEGE);
-
-            List<String> allPageList = dao.getPageListByUserRoleAndSection(inputBean.getUserRole(), inputBean.getSection());
-
-            allPageList.addAll(inputBean.getNewBox());
-
-            if (allPageList.containsAll(custPageList)) {
-
-                message = MessageVarList.USER_ROLE_PRI_PAGE_TYPE_DEPEND;
-                return message;
-
-            } else if (allPageList.containsAll(userPageList)) {
-
-                message = MessageVarList.USER_ROLE_PRI_PAGE_TYPE_DEPEND;
-                return message;
-
-            } else if (allPageList.containsAll(privilegePageList)) {
-
-                message = MessageVarList.USER_ROLE_PRI_PAGE_TYPE_DEPEND;
-                return message;
-
-            }
-        } catch (Exception ex) {
-            message = "User role privilege " + MessageVarList.COMMON_ERROR_PROCESS;
-        }
-        
-        return message;
-    }
 }

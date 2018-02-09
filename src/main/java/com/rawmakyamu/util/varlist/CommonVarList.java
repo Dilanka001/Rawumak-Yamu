@@ -52,9 +52,9 @@ public class CommonVarList {
     public static final String PERSONAL_ALERT = "Personal";
     public static final String SEGMENT_ALERT = "Segment";
     public static final String REPORT_SBANK_ADD_HEADER = "Sri Lanka";
-    public static final String REPORT_SBANK_ADD = "242 Union Place Colombo 2, Colombo 00200";
-    public static final String REPORT_SBANK_TEL = "+94(0)114711411";
-    public static final String REPORT_SBANK_MAIL = "customerservice@nationstrust.com ";
+    public static final String REPORT_SBANK_ADD = "444 Union Place Colombo 2, Colombo 00200";
+    public static final String REPORT_SBANK_TEL = "+94(0)114114114";
+    public static final String REPORT_SBANK_MAIL = "customerservice@taxiservice.com ";
     public static final String JNDI_REPORT_CONNECTION = "RDB_JNDI";
     public static HashMap<String, String> SMSMESSAGESMAP = new HashMap<String, String>();
     public static final String IMAGE_URL = "IMGURL";
